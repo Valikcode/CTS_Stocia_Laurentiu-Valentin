@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class ElevReader implements AplicantReader {
+public class ElevReader extends AplicantReader {
 
     @Override
     public List<Aplicant> readAplicants(String fileName) throws FileNotFoundException {
@@ -19,18 +19,13 @@ public class ElevReader implements AplicantReader {
         List<Aplicant> elevi = new ArrayList<Aplicant>();
 
         while (input.hasNext()) {
-            String nume = input.next();
-            String prenume = input.next();
-            int varsta = input.nextInt();
-            int punctaj = input.nextInt();
-            int nr = input.nextInt();
-            String[] vect = new String[5];
-            for (int i = 0; i < nr; i++)
-                vect[i] = input.next();
+            Elev elev = new Elev();
+            super.readAplicant(input, elev);
             int clasa = input.nextInt();
             String tutore = input.next();
-            Elev e = new Elev(nume, prenume, varsta, punctaj, nr, vect, clasa, tutore);
-            elevi.add(e);
+            elev.setClasa(clasa);
+            elev.setTutore(tutore);
+            elevi.add(elev);
         }
         input.close();
         return elevi;
