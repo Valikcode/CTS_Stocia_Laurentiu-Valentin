@@ -78,4 +78,15 @@ class PersoanaTest {
         IPersoana persoana = new Persoana("Andrei", "5220524295444");
         assertEquals(1,persoana.getVarsta());
     }
+
+    @org.junit.jupiter.api.Test
+    void verificaConstructorCrosscheck() {
+        Persoana persoana1 = new Persoana("Andrei", "5220524295444");
+        Persoana persoana2 = new Persoana();
+
+        persoana2.setCNP("5220524295444");
+        persoana2.setNume("Andrei");
+        assertEquals(persoana1.getCNP(), persoana2.getCNP());
+        assertEquals(persoana1.getNume(), persoana2.getNume());
+    }
 }

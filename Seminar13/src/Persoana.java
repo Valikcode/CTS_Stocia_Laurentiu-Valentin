@@ -31,7 +31,23 @@ public class Persoana implements IPersoana{
 		}
 		return "N/A";
 	}
-	
+
+	public String getNume() {
+		return nume;
+	}
+
+	public String getCNP() {
+		return CNP;
+	}
+
+	public void setNume(String nume) {
+		this.nume = nume;
+	}
+
+	public void setCNP(String CNP) {
+		this.CNP = CNP;
+	}
+
 	public int getVarsta(){
 		if(CNP == null){
 			throw new CNPNull();
