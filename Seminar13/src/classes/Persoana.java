@@ -1,10 +1,14 @@
+package classes;
 
 
+import classes.IPersoana;
+import tests.CNPNull;
+import tests.ExceptieNenascut;
 
 import java.util.Calendar;
 import java.util.concurrent.TimeUnit;
 
-public class Persoana implements IPersoana{
+public class Persoana implements IPersoana {
 
 	private String nume;
 	public String CNP;
